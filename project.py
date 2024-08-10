@@ -6,9 +6,7 @@ from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.optimizers import Adam
 from sklearn.utils import shuffle
 
-# Step 1: Data Collection (Using OpenCV's built-in dataset for simplicity)
-# Load positive and negative samples
-# Replace these with your dataset paths
+# Step 1: Data Collection
 pos_images = [cv2.imread(f'path_to_positive_samples/{i}.png') for i in range(1, 101)]
 neg_images = [cv2.imread(f'path_to_negative_samples/{i}.png') for i in range(1, 101)]
 
@@ -84,7 +82,7 @@ def detect_pedestrians(image):
     return image
 
 # Load a test image
-test_image = cv2.imread('path_to_test_image/test_image.png')  # Add your path to a test image
+test_image = cv2.imread('path_to_test_image/test_image.png')
 detected_image = detect_pedestrians(test_image)
 
 # Display the result
